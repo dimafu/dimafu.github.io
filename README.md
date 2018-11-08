@@ -1,6 +1,6 @@
-# Verkefni 9
+# Project 9
 
-Útfæra skal leit og birtingu á lénum gegnum `apis.is`. `http://apis.is/isnic?domain=hi.is` leitar t.d. að upplýsingum um `hi.is` og skilar til baka hlut, t.d.:
+Search and display of the domain name should be developed through `apis.is`. `http://apis.is/isnic?domain=hi.is` searches for information about `hi.is` and returns an object, e.g.:
 
 ```javascript
 {
@@ -22,79 +22,79 @@
 }
 ```
 
-Gefinn er HTML og CSS grunnur með útliti sem ekki ætti að þurfa að breyta.
+HTML and CSS base of the outlook is given and shall not be changed.
 
-Leit skal:
+Search should:
 
-* Aðeins leyfa að leita ef gildi í `<input>` er ekki tómistrengur, annars skal birta skilaboðin `Lén verður að vera strengur`
-* Birta skilaboðin `Leita að léni...` ásamt mynd `loading.gif` meðan leitað er, sjá `.loading` class
+* Only allow to search if value in `<input>` is not an empty string, otherwise should show a message `Domain should be a string`
+* Show a message `Searching for domain...` along with the image `loading.gif` while searching, see `.loading` class
 
-Villumeðhöndlun:
+Debugging:
 
-* Ef villa kemur upp hjá `apis.is` eða við tengingu skal birta `Villa við að sækja gögn`
-* Ef ekkert lén finnst skal birta `Lén er ekki skráð`
+* If an error comes from `apis.is` or with the connection shall display `Error with getting data`
+* If no domain name is found shall display `Domain is not registered`
 
-Birta skal fyrir öll lén sem finnast:
+For all the found domains should display:
 
-* Lén (`domain`)
-* Skráð (`registered`)
-* Seinast breytt (`lastChange`)
-* Rennur út (`expires`)
+* `domain`
+* `registered`
+* `lastChange`
+* `expires`
 
-Ef gögn eru skilgreind skal einnig birta:
+If defined should also display:
 
-* Skráningaraðili (`registrantname`)
-* Netfang (`email`)
-* Heimilisfang (`address`)
-* Land (`country`)
+* `registrantname`
+* `email`
+* `address`
+* `country`
 
-Dagsetningar skal birta sem [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) dagsetningar (`YYYY-MM-DD`).
+Dates should be displayed as [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) dates (`YYYY-MM-DD`).
 
-Útfæra skal JavaScript virkni innan þess módúl sem gefinn er.
+Javascript functionality should be developed within the given module.
 
-`browser-sync` er uppsett í verkefninu:
+`browser-sync` is set up in the project:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Sjá dæmi í `demo.mp4`.
+See example in `demo.mp4`.
 
-Ef apis.is fer niður er gefið dæmi í `example.json` sem hægt er að sækja í stað gagna með því að vísa beint í það skjal fyrir allar fyrirspurnir.
+If apis.is is down an example is given in `example.json` which can be accessed instead of the data by directly referring in that file for all the requests.
 
 ## eslint
 
-Setja þarf upp `eslint` með airbnb style guide. `eslint` ætti að keyra þegar `npm test` er keyrt og linta allar javascript skrár.
+Should set up `eslint` with airbnb style guide. `eslint` should run when `npm test` is ran and lint all javascript files.
 
-Leyfilegt er að slökkva á villum tengum `for of` ítrunum með `/* eslint-disable-line */`, einnig er í lagi að nota það eða leyfa almennt `console.error`. Ekki ætti að nota það fyrir annað, heldur laga villu sem koma upp.
+It is allowed to disable error messages `for of` loops with `/* eslint-disable-line */`, also it is acceptable to use that or allow general `console.error`. It should not be used for anything else and other errors that pop up should be fixed.
 
-## Mat
+## Assessment
 
-* 20% – Snyrtilegt JavaScript með `eslint` uppsett og án villna
-* 30% – Leit eftir lénum
-* 30% – Niðurstöður birtar
-* 20% – Villumeðhöndlun
+* 20% – Neat JavaScript with `eslint` set up and without errors
+* 30% – Domain name search
+* 30% – Results display
+* 20% – Debugging
 
-## Sett fyrir
+## Posted
 
-Verkefni sett fyrir í fyrirlestri mánudaginn 5. nóvember 2018.
+Project is set up before the lecture on Monday 5th of November 2018.
 
-## Skil
+## Submission
 
-Skila skal undir „Verkefni og hlutaprófa“ á Uglu í seinasta lagi fyrir lok dags þriðjudaginn 13. nóvember 2018.
+Should be turned in under „Verkefni og hlutaprófa“ on Ugla the latest by the end of the day on Tuesday 13th November 2018.
 
-Skilaboð skulu innihalda:
+Message should include:
 
-* Slóð á verkefni á heimasvæði
-* Slóð á GitHub repo fyrir verkefni, og dæmatímakennurum skal hafa verið boðið í repo ([sjá leiðbeiningar](https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/)). Notendanöfn þeirra eru `arnar44`, `mimiqkz`, `gorri4`, `hinriksnaer`, `gunkol`, `freyrdanielsson`, `osk`
+* Path to the project's homepage
+* Path to the GitHub repo for the project, and teaching assistants (TA) should be added as collaborators in a repo ([sjá leiðbeiningar](https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/)). Their usernames are `arnar44`, `mimiqkz`, `gorri4`, `hinriksnaer`, `gunkol`, `freyrdanielsson`, `osk`
 
-## Einkunn
+## Grading
 
-Sett verða fyrir tíu minni verkefni þar sem átta bestu gilda 3,5% hvert, samtals 28% af lokaeinkunn.
+There will be ten smaller projects where eight best worth 3,5% each, in total 28% of final grade.
 
-Sett verða fyrir tvö hópverkefni þar sem hvort um sig gildir 11%, samtals 22% af lokaeinkunn.
+There will be two group projects where each of them worth 11%, in total 22% of final grade.
 
 ---
 
-> Útgáfa 0.1
+> Version 0.2
