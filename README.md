@@ -26,27 +26,27 @@ HTML and CSS base of the outlook is given and shall not be changed.
 
 Search should:
 
-* Only allow to search if value in `<input>` is not an empty string, otherwise should show a message `Domain should be a string`
-* Show a message `Searching for domain...` along with the image `loading.gif` while searching, see `.loading` class
+* Only allow to search if value in `<input>` is not an empty string, otherwise should show a message `Lén verður að vera strengur`
+* Show a message `Leita að léni...` along with the image `loading.gif` while searching, see `.loading` class
 
-Debugging:
+Error handling:
 
-* If an error comes from `apis.is` or with the connection shall display `Error with getting data`
-* If no domain name is found shall display `Domain is not registered`
+* If an error comes from `apis.is` or with the connection shall display `Villa við að sækja gögn`
+* If no domain name is found shall display `Lén er ekki skráð`
 
 For all the found domains should display:
 
-* `domain`
-* `registered`
-* `lastChange`
-* `expires`
+* Lén `domain`
+* Skráð `registered`
+* Seinast breytt `lastChange`
+* Rennur út `expires`
 
 If defined should also display:
 
-* `registrantname`
-* `email`
-* `address`
-* `country`
+* Skráningaraðili `registrantname`
+* Netfang `email`
+* Heimilisfang `address`
+* Land `country`
 
 Dates should be displayed as [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) dates (`YYYY-MM-DD`).
 
