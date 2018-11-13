@@ -19,13 +19,19 @@ const program = (() => {
   }
 
   // Function to append the data to the list
-  function appendToDL(dl, term, value) {
+  function appendToDL(dl, term, value, isDate) {
     // Append only, if the value is defined
     if (value !== undefined) {
       const key = document.createElement('dt');
       key.appendChild(document.createTextNode(term));
       dl.appendChild(key);
-
+      // Converting date to ISO 8601
+      if (isDate) {
+        const msec = new Date(value);
+        const d = msec.toISOString();
+        const sep = d.split('T');
+        value = sep[0];
+      }
       const val = document.createElement('dd');
       val.appendChild(document.createTextNode(value));
       dl.appendChild(val);
@@ -48,9 +54,9 @@ const program = (() => {
     const dl = document.createElement('dl');
 
     appendToDL(dl, 'Lén', domain);
-    appendToDL(dl, 'Skráð', registered);
-    appendToDL(dl, 'Seinast breytt', lastChange);
-    appendToDL(dl, 'Rennur út', expires);
+    appendToDL(dl, 'Skráð', registered, true);
+    appendToDL(dl, 'Seinast breytt', lastChange, true);
+    appendToDL(dl, 'Rennur út', expires, true);
     appendToDL(dl, 'Skráningaraðili', registrantname);
     appendToDL(dl, 'Netfang', email);
     appendToDL(dl, 'Heimilisfang', address);
