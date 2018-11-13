@@ -25,13 +25,19 @@ const program = (() => {
       const key = document.createElement('dt');
       key.appendChild(document.createTextNode(term));
       dl.appendChild(key);
-      // Converting date to ISO 8601
+
+      // Converting date to ISO 8601 format
       if (isDate) {
         const msec = new Date(value);
         const d = msec.toISOString();
         const sep = d.split('T');
-        value = sep[0];
+        const time = sep[0];
+        const val = document.createElement('dd');
+        val.appendChild(document.createTextNode(time));
+        dl.appendChild(val);
+        return;
       }
+
       const val = document.createElement('dd');
       val.appendChild(document.createTextNode(value));
       dl.appendChild(val);
@@ -98,7 +104,6 @@ const program = (() => {
     fetch(`${API_URL}${number}`)
       .then((response) => {
         if (response.ok) {
-          console.log(response);
           return response.json();
         }
 
